@@ -1,0 +1,6 @@
+# arduino ide generated files
+*.cfg
+*.svd
+
+# credentials
+secret.h
