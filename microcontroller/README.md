@@ -35,20 +35,14 @@ Other instructions for ESP32 Board
   3. Click **Upload** button in IDE
   4. Release **BOOT** button when "Connecting..." is displayed in console
 
-### Llibraries
+### Libraries
 
 | Lirary name | Author              | Version  | Link(s)                                            |
 | ----------- | ------------------- | -------- | -------------------------------------------------- |
 | ArduinoJson | Benoît Blanchon     | `6.19.4` | [GitHub](https://github.com/bblanchon/ArduinoJson) |
 | MFRC522     | Miguel André Balboa | `1.4.10` | [GitHub](https://github.com/miguelbalboa/rfid)     |
 
-<!-- _Following libraries are already installed after ESP8266 board installation_
+_Following libraries don't need adittional installation_
 
-| Lirary name       | Link(s)                                                                              |
-| ----------------- | ------------------------------------------------------------------------------------ |
-| ESP8266WiFi       | [GitHub](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi)       |
-| ESP8266HTTPClient | [GitHub](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266HTTPClient) |
-
-More:
-
-- HTTP code references of ESP8266HTTPClient library can be found [here](https://github.com/esp8266/Arduino/blob/137d421fdd27fc612c8a63ec6dda02a14a28771f/libraries/ESP8266HTTPClient/src/ESP8266HTTPClient.h) -->
+- HTTPClient (pre-installed after ESP8266 board installation)
+- WiFi
