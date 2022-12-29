@@ -1,6 +1,7 @@
 # arduino ide generated files
-*.cfg
-*.svd
+microcontroller/**/*.json
+microcontroller/**/*.cfg
+microcontroller/**/*.svd
 
 # credentials
 secret.h
