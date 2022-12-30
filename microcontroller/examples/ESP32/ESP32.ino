@@ -4,14 +4,6 @@
 
 #include "secret.h"    // includes wifi credentials & backend api url
 
-//#define ssid "Bufferland"
-//#define password "colorcode#0000"
-//#define apiUrl "https://happy-plant-backend-production.up.railway.app/api/v1/plants"
-
-const char* ssid = "Kobi's room";
-const char* password = "khaba911628";
-const char* apiUrl = "https://happy-plant-backend-production.up.railway.app/api/v1/plants";
-
 int timeInterval = 5;
 
 void setup() {
