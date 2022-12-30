@@ -37,10 +37,12 @@ Other instructions for ESP32 Board
 
 ### Libraries
 
-| Lirary name | Author              | Version  | Link(s)                                            |
-| ----------- | ------------------- | -------- | -------------------------------------------------- |
-| ArduinoJson | Benoît Blanchon     | `6.19.4` | [GitHub](https://github.com/bblanchon/ArduinoJson) |
-| MFRC522     | Miguel André Balboa | `1.4.10` | [GitHub](https://github.com/miguelbalboa/rfid)     |
+| Lirary name | Author              | Version  | Link(s)                                                             |
+| ----------- | ------------------- | -------- | ------------------------------------------------------------------- |
+| ArduinoJson | Benoît Blanchon     | `6.19.4` | [GitHub](https://github.com/bblanchon/ArduinoJson)                  |
+| MFRC522     | Miguel André Balboa | `1.4.10` | [GitHub](https://github.com/miguelbalboa/rfid)                      |
+| NewPing     | Tim Eckel           | `1.9.4`  | [GitHub](https://bitbucket.org/teckel12/arduino-new-ping/wiki/Home) |
+| ESP32Servo  | Kevin Harrington    | ``       | [GitHub](https://github.com/madhephaestus/ESP32Servo)               |
 
 _Following libraries don't need adittional installation_
 
