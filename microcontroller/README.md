@@ -49,10 +49,15 @@ cd microcontroller/full-module
 | HTTPClient  | _pre-installed, select ESP32 board for automatic import_ |
 | WiFi        | _pre-installed_                                          |
 
-5. Select **ESP32 Dev Module** from board manager
-6. Select correct Port
-7. Code burn procedure:
-   1. Press and hold **BOOT** button
-   2. Click **EN** button
-   3. Click **Upload** button in IDE
-   4. Release **BOOT** button when "Connecting..." is displayed in console
+5. Connect all components like the following figure
+   ![full-module_bb.png](full-module/full-module_bb.png)
+6. Steps in Arduino IDE
+   1. Select **ESP32 Dev Module** from board manager
+   2. Select correct Port
+   3. Code burn procedure (must be followed serially)
+      1. Press and hold **BOOT** button
+      2. Click **EN** button
+      3. Click **Upload** button in IDE
+      4. Release **BOOT** button when "Connecting..." is displayed in console
+
+### Extras
