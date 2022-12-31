@@ -50,7 +50,13 @@ cd microcontroller/full-module
 | WiFi        | _pre-installed_                                          |
 
 5. Connect all components like the following figure
+
+   **NOTES:**
+
+   - Vcc and Gnd of HC-SR04 must be connected with VIN and GND of ESP32
+
    ![full-module_bb.png](full-module/full-module_bb.png)
+
 6. Steps in Arduino IDE
    1. Select **ESP32 Dev Module** from board manager
    2. Select correct Port
@@ -60,4 +66,6 @@ cd microcontroller/full-module
       3. Click **Upload** button in IDE
       4. Release **BOOT** button when "Connecting..." is displayed in console
 
-### Extras
+**Extra NOTES:**
+
+1. HTTP code references of `HTTPClinet` library [here](https://github.com/espressif/arduino-esp32/blob/master/libraries/HTTPClient/src/HTTPClient.h)
