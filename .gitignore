@@ -5,3 +5,6 @@ microcontroller/**/*.svd
 
 # credentials
 secret.h
+
+# editor
+settings.json
