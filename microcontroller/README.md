@@ -45,7 +45,7 @@ cd microcontroller/full-module
 | ArduinoJson | Benoît Blanchon                                          | `6.19.4` | [GitHub](https://github.com/bblanchon/ArduinoJson)                  |
 | MFRC522     | Miguel André Balboa                                      | `1.4.10` | [GitHub](https://github.com/miguelbalboa/rfid)                      |
 | NewPing     | Tim Eckel                                                | `1.9.4`  | [GitHub](https://bitbucket.org/teckel12/arduino-new-ping/wiki/Home) |
-| ESP32Servo  | Kevin Harrington                                         |          | [GitHub](https://github.com/madhephaestus/ESP32Servo)               |
+| ESP32Servo  | Kevin Harrington                                         | `0.12.1` | [GitHub](https://github.com/madhephaestus/ESP32Servo)               |
 | HTTPClient  | _pre-installed, select ESP32 board for automatic import_ |
 | WiFi        | _pre-installed_                                          |
 
