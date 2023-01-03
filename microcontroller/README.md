@@ -38,18 +38,19 @@ cd microcontroller/full-module
 
 | Board name | Author            | Version | Link(s)                                                                                                                                                         |
 | ---------- | ----------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ESP32      | ESP8266 Community | `2.0.6` | [GitHub](https://github.com/espressif/arduino-esp32) <br /> [Installation process](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html) |
+| ESP32      | Espressif Systems | `2.0.6` | [GitHub](https://github.com/espressif/arduino-esp32) <br /> [Installation process](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html) |
 
-| Lirary name | Author                                                   | Version  | Link(s)                                                             |
-| ----------- | -------------------------------------------------------- | -------- | ------------------------------------------------------------------- |
-| ArduinoJson | Benoît Blanchon                                          | `6.19.4` | [GitHub](https://github.com/bblanchon/ArduinoJson)                  |
-| MFRC522     | Miguel André Balboa                                      | `1.4.10` | [GitHub](https://github.com/miguelbalboa/rfid)                      |
-| NewPing     | Tim Eckel                                                | `1.9.4`  | [GitHub](https://bitbucket.org/teckel12/arduino-new-ping/wiki/Home) |
-| ESP32Servo  | Kevin Harrington                                         | `0.12.1` | [GitHub](https://github.com/madhephaestus/ESP32Servo)               |
-| HTTPClient  | _pre-installed, select ESP32 board for automatic import_ |
-| WiFi        | _pre-installed_                                          |
+| Lirary name       | Author                                                      | Version  | Link(s)                                                             |
+| ----------------- | ----------------------------------------------------------- | -------- | ------------------------------------------------------------------- |
+| ArduinoJson       | Benoît Blanchon                                             | `6.19.4` | [GitHub](https://github.com/bblanchon/ArduinoJson)                  |
+| MFRC522           | Miguel André Balboa                                         | `1.4.10` | [GitHub](https://github.com/miguelbalboa/rfid)                      |
+| NewPing           | Tim Eckel                                                   | `1.9.4`  | [GitHub](https://bitbucket.org/teckel12/arduino-new-ping/wiki/Home) |
+| ESP32Servo        | Kevin Harrington                                            | `0.12.1` | [GitHub](https://github.com/madhephaestus/ESP32Servo)               |
+| LiquidCrystal_I2C | Author: Frank de Brabander <br/> Maintainer: Marco Schwartz | `1.1.2`  | [GitHub](https://github.com/johnrickman/LiquidCrystal_I2C)          |
+| HTTPClient        | _pre-installed, select ESP32 board for automatic import_    |
+| WiFi              | _pre-installed_                                             |
 
-5. Connect all components like the following figure
+1. Connect all components like the following figure
 
    **NOTES:**
 
@@ -57,7 +58,7 @@ cd microcontroller/full-module
 
    ![full-module_bb.png](full-module/full-module_bb.png)
 
-6. Steps in Arduino IDE
+2. Steps in Arduino IDE
    1. Select **ESP32 Dev Module** from board manager
    2. Select correct Port
    3. Code burn procedure (must be followed serially)
