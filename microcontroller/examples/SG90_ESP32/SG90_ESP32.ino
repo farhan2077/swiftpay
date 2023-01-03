@@ -2,7 +2,7 @@
 
 Servo servo;
 
-int pos = 0;
+int servoPos = 0;
 int servoPin = 12;
 
 void setup()
@@ -14,14 +14,14 @@ void setup()
 void loop()
 {
   Serial.println("loop()");
-  for (pos = 0; pos <= 180; pos += 1)
+  for (servoPos = 0; servoPos <= 180; servoPos += 1)
   {
-    servo.write(pos);
+    servo.write(servoPos);
     delay(15);
   }
-  for (pos = 180; pos >= 0; pos -= 1)
+  for (servoPos = 180; servoPos >= 0; servoPos -= 1)
   {
-    servo.write(pos);
+    servo.write(servoPos);
     delay(15);
   }
 }
