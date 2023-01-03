@@ -3,6 +3,7 @@
 #include <SPI.h>
 #include <HTTPClient.h>
 #include "NewPing.h"
+#include <ESP32Servo.h>
 
 #include "secret.h"
 
@@ -13,9 +14,12 @@
 #define ECHO_PIN 4       // ESP32 pin GIOP25 connected to Ultrasonic Sensor's ECHO pin
 #define MAX_DISTANCE 400 // Maximum distance we want to ping for (in centimeters).
 
-float distance; // ultrasonic sensor
+int servoPos = 0;  // servo
+int servoPin = 12; // servo
+float distance;    // ultrasonic sensor
 String initialUid = "empty";
 
+Servo servo;
 MFRC522 mfrc522(SS_PIN, RST_PIN);
 NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
 
@@ -28,7 +32,7 @@ void setup()
   mfrc522.PCD_Init();
   delay(4);
 
-  // ultrasonis sensor
+  // ultrasonic sensor
   digitalWrite(TRIGGER_PIN, LOW);
   delayMicroseconds(10);
   digitalWrite(TRIGGER_PIN, HIGH);
@@ -36,6 +40,7 @@ void setup()
   digitalWrite(TRIGGER_PIN, LOW);
 
   // servo
+  servo.attach(servoPin);
 
   // wifi
   WiFi.begin(ssid, password);
@@ -45,6 +50,8 @@ void setup()
 void loop()
 {
   Serial.println("-----START-----");
+
+  delay(100);
 
   // start to read rfid
   if (!mfrc522.PICC_IsNewCardPresent())
@@ -121,22 +128,33 @@ void loop()
               Serial.println("Gate is opening");
 
               // replace delay and put servo angle 0 to 60
-              delay(3000);
+              for (servoPos = 0; servoPos <= 90; servoPos += 1)
+              {
+                servo.write(servoPos);
+                delay(15);
+              }
 
               Serial.println("Gate is OPEN");
               Serial.print("Waiting for vehicle to pass");
 
               distance = sonar.ping_cm();
-              while (distance < 15) // if vehicle is within 15 cm or nearer, check again to see if vehicle has passed
+
+              while (distance < 10) // if vehicle is within 15 cm or nearer, check again to see if vehicle has passed
               {
                 delay(500);
                 distance = sonar.ping_cm();
                 Serial.print(".");
               }
 
-              // vehicle has pass, close gate
+              delay(5000);
+
+              // vehicle has passed, close gate
               // replace delay and put servo angle 60 to
-              delay(3000);
+              for (servoPos = 90; servoPos >= 0; servoPos -= 1)
+              {
+                servo.write(servoPos);
+                delay(15);
+              }
               Serial.println("Gate is CLOSED");
             }
           }
