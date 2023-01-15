@@ -18,6 +18,8 @@ int servoPos = 0;  // servo
 int servoPin = 12; // servo
 float distance;    // ultrasonic sensor
 String initialUid = "empty";
+int redLed = 25;
+int greenLed = 26;
 
 Servo servo;
 MFRC522 mfrc522(SS_PIN, RST_PIN);
@@ -45,6 +47,10 @@ void setup()
   // wifi
   WiFi.begin(ssid, password);
   Serial.println("Connecting to WiFi...");
+
+  // led
+  pinMode(redLed, OUTPUT);
+  pinMode(greenLed, OUTPUT);
 }
 
 void loop()
@@ -125,6 +131,7 @@ void loop()
               // allow pass but check first if the vehicle is still there
               client.end();
               Serial.println("PASS");
+              digitalWrite(greenLed, HIGH);
               Serial.println("Gate is opening");
 
               // replace delay and put servo angle 0 to 60
@@ -146,7 +153,7 @@ void loop()
                 Serial.print(".");
               }
 
-              delay(5000);
+              delay(2000);
 
               // vehicle has passed, close gate
               // replace delay and put servo angle 60 to
@@ -156,6 +163,7 @@ void loop()
                 delay(15);
               }
               Serial.println("Gate is CLOSED");
+              digitalWrite(greenLed, LOW);
             }
           }
           else // negative - UPDATE BALANCE
@@ -168,16 +176,20 @@ void loop()
         else if (httpCode == HTTP_CODE_NOT_FOUND) // 404 - ADD TRANSACTION
         {
           Serial.println("NO PASS");
+          digitalWrite(redLed, HIGH);
           Serial.println("Reason: vehicle not registered");
           // start again after some delay
           delay(5000);
+          digitalWrite(redLed, LOW);
         }
         else if (httpCode == HTTP_CODE_BAD_REQUEST) // 400 - ADD TRANSACTION
         {
           Serial.println("NO PASS");
+          digitalWrite(redLed, HIGH);
           Serial.println("Reason: low balance of user");
           // start again after some delay
           delay(5000);
+          digitalWrite(redLed, LOW);
         }
         else // positive - ADD TRANSACTION - other respionse from server
         {
