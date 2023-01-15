@@ -56,7 +56,7 @@ cd microcontroller/full-module
 
    - Vcc and Gnd of HC-SR04 must be connected with VIN and GND of ESP32
 
-   ![full-module_bb.png](full-module/full-module_bb.png)
+   ![full-module_bb](full-module/full-module_bb.jpg)
 
 2. Steps in Arduino IDE
    1. Select **ESP32 Dev Module** from board manager
