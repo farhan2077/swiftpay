@@ -179,7 +179,7 @@ void loop()
           digitalWrite(redLed, HIGH);
           Serial.println("Reason: vehicle not registered");
           // start again after some delay
-          delay(5000);
+          checkVehicleHasPassed();
           digitalWrite(redLed, LOW);
         }
         else if (httpCode == HTTP_CODE_BAD_REQUEST) // 400 - ADD TRANSACTION
@@ -188,7 +188,7 @@ void loop()
           digitalWrite(redLed, HIGH);
           Serial.println("Reason: low balance of user");
           // start again after some delay
-          delay(5000);
+          checkVehicleHasPassed();
           digitalWrite(redLed, LOW);
         }
         else // positive - ADD TRANSACTION - other respionse from server
@@ -196,19 +196,33 @@ void loop()
           Serial.println("NO PASS");
           Serial.println("There was an error, checking again");
           // start again after some delay
-          delay(5000);
+          checkVehicleHasPassed();
         }
       }
       else // negative - ADD TRANSACTION
       {
         Serial.printf("POST failed, error: %s\n", client.errorToString(httpCode).c_str());
         // start again after some delay
-        delay(5000);
+        checkVehicleHasPassed();
       }
     }
   }
   else
   {
     Serial.println("Problem with WiFi connection");
+  }
+}
+
+void checkVehicleHasPassed()
+{
+  Serial.print("Waiting for vehicle to pass");
+
+  distance = sonar.ping_cm();
+
+  while (distance < 10) // if vehicle is within 15 cm or nearer, check again to see if vehicle has passed
+  {
+    delay(500);
+    distance = sonar.ping_cm();
+    Serial.print(".");
   }
 }
