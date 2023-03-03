@@ -1,6 +1,6 @@
 <h1 align="center">
 
-SwiftPay - Microcontroller
+SwiftToll - Microcontroller
 
 </h1>
 
@@ -24,7 +24,7 @@ SwiftPay - Microcontroller
 1. Download or clone the repository
 
 ```sh
-git clone https://github.com/farhan2077/swiftpay
+git clone https://github.com/farhan2077/swifttoll
 ```
 
 2. Move into the directory
@@ -33,7 +33,7 @@ git clone https://github.com/farhan2077/swiftpay
 cd microcontroller/full-module
 ```
 
-1. Add `secret.h` similar to [secret.h.example](https://github.com/farhan2077/swiftpay/blob/main/microcontroller/full-module/secret.h.example)
+1. Add `secret.h` similar to [secret.h.example](https://github.com/farhan2077/swifttoll/blob/main/microcontroller/full-module/secret.h.example)
 2. Install following board and libraries in Arduino IDE
 
 | Board name | Author            | Version | Link(s)                                                                                                                                                         |
