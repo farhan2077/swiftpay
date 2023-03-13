@@ -1,8 +1,8 @@
-<h1 align="center">
+<div align="center">
 
-SwiftToll
+![This is a alt text.](/swifttoll.png "SwiftToll banner.")
 
-</h1>
+</div>
 
 <div align="center">
 
